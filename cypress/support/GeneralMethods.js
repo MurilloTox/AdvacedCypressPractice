@@ -15,6 +15,10 @@ class GeneralMethods{
     aboutUsIsDisplayed(){
         return cy.get('#example-video').should('be.visible');
     }
+
+    validateUrl(expectedUrl){
+        cy.url().should('include', expectedUrl);
+    }
 }
 
 module.exports = new GeneralMethods;

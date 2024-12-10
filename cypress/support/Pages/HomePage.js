@@ -11,6 +11,9 @@ class HomePage {
         }
     }
 
+    cartHeader(){
+        return cy.get('#navbarExample > ul > li:nth-child(4) > a');
+    }
 
     prevSlideButton(){
         return cy.get('.carousel-control-prev-icon');
@@ -26,6 +29,10 @@ class HomePage {
     
     clickOnPrevSlideButton() {
         return this.prevSlideButton().click();
+    }
+
+    clickOnCart(){
+        return this.cartHeader().click();
     }
 
 
