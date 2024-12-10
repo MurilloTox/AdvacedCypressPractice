@@ -19,6 +19,8 @@ class GeneralMethods{
     validateUrl(expectedUrl){
         cy.url().should('include', expectedUrl);
     }
+
+    
 }
 
 module.exports = new GeneralMethods;

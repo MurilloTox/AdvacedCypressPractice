@@ -6,6 +6,10 @@ class CartPage{
     placeOrderDisplayed(){
         return this.placeOrderButton().should('be.visible');
     }
+
+    placeOrderButtonClick(){
+        return this.placeOrderDisplayed().click();
+    }
 }
 
 module.exports = new CartPage;
