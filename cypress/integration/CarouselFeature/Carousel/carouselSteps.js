@@ -21,7 +21,6 @@ Then('the item displayed should be the first slide', ()=>{
     HomePage.compareElements('div.carousel-item.active img', 'div.carousel-item.active img[src="Samsung1.jpg"]');
 })
 
-
-Then('the item displayed should be the first slide', () =>{
+Then('the item displayed should be the third slide', () =>{
     cy.get('img[alt="Third slide"]').should('be.visible');
 })

@@ -8,6 +8,10 @@ Given("I'm in the homepage", () => {
     cy.visit("/");
 })
 
+Given('i made a GET request to {string}', (url) => {
+    cy.request('GET', url).as('response');
+});
+
 When('I click on the contact option', () =>{
     GeneralMethods.clickOnContact();
 })
@@ -32,7 +36,6 @@ Then('a video should be visible', () =>{
     GeneralMethods.aboutUsIsDisplayed();
 })
 
-After({ tags: '@justAFrame' }, () => {
-    cy.wait(500);
-    cy.get('div.modal-dialog:visible .modal-header .close > span').click();
+Then('i should obtain a status code of {int}', (statusCode) => {
+    cy.get('@response').should('have.property', 'status', statusCode);
 });
