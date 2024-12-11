@@ -9,42 +9,31 @@ class CartPage{
     }
 
     name(){
-        cy.get('#orderModal').should('be.visible');
-        return cy.get('#name').should('be.visible');
+        cy.get('#orderModal').should('be.visible').and('not.be.disabled').and('exist');
+        return cy.get('#name').should('be.visible').and('not.be.disabled').and('exist');
     }
 
     country(){
-        cy.get('#orderModal').should('be.visible');
-        return cy.get("#country").should('be.visible');
+        return cy.get("#country").should('be.visible').and('not.be.disabled').and('exist');
     }
 
     city(){
-        cy.get('#orderModal').should('be.visible');
-
-        return cy.get('#city').should('be.visible');
+        return cy.get('#city').should('be.visible').and('not.be.disabled').and('exist');
     }
 
     card(){
-        cy.get('#orderModal').should('be.visible');
-
-        return cy.get('#card').should('be.visible');
+        return cy.get('#card').should('be.visible').and('not.be.disabled').and('exist');
     }
 
     monthCard(){
-        cy.get('#orderModal').should('be.visible');
-
-        return cy.get('#month').should('be.visible');
+        return cy.get('#month').should('be.visible').and('not.be.disabled').and('exist');
     }
 
     yearCard(){
-        cy.get('#orderModal').should('be.visible');
-
-        return cy.get('#year').should('be.visible');
+        return cy.get('#year').should('be.visible').and('not.be.disabled').and('exist');
     }
 
     purchaseButton(){
-        cy.get('#orderModal').should('be.visible');
-
         return cy.get('#orderModal > div > div > div.modal-footer > button.btn.btn-primary')
         .should('be.visible');
     }

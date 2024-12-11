@@ -37,12 +37,12 @@ class GeneralMethods{
 
     fillInformation(){
         return cy.fixture('UserData.json').then((userData) => {
-            CartPage.name().should('be.visible').type(userData.name);
-            CartPage.country().should('be.visible').type(userData.country);
-            CartPage.city().should('be.visible').type(userData.city);
-            CartPage.card().should('be.visible').type(userData.card);
-            CartPage.monthCard().should('be.visible').type(userData.month);
-            CartPage.yearCard().should('be.visible').type(userData.year);
+            CartPage.name().type(userData.name);
+            CartPage.country().type(userData.country);
+            CartPage.city().type(userData.city);
+            CartPage.card().type(userData.card);
+            CartPage.monthCard().type(userData.month);
+            CartPage.yearCard().type(userData.year);
         });
     }
 }
