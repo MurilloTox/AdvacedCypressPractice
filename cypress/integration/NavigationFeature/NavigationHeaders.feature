@@ -1,8 +1,8 @@
 Feature: Navigation throught headers
 
 Background:
-    Given i made a GET request to "https://www.demoblaze.com/index.html"
-    And I'm in the homepage
+    Given I'm in the homepage
+    And i made a GET request to "https://www.demoblaze.com/index.html"
 
 @smoke @justAFrame
 Scenario: Visit contact header
