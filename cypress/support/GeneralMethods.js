@@ -35,13 +35,15 @@ class GeneralMethods{
           }
     }
 
-    fillInformation(name,country,city,card,mCard,yCard){
-        CartPage.name().type(name);
-        CartPage.country().type(country);
-        CartPage.city().type(city);
-        CartPage.card().type(card);
-        CartPage.monthCard().type(mCard);
-        CartPage.yearCard().type(yCard);
+    fillInformation(){
+        return cy.fixture('UserData.json').then((userData) => {
+            CartPage.name().should('be.visible').type(userData.name);
+            CartPage.country().should('be.visible').type(userData.country);
+            CartPage.city().should('be.visible').type(userData.city);
+            CartPage.card().should('be.visible').type(userData.card);
+            CartPage.monthCard().should('be.visible').type(userData.month);
+            CartPage.yearCard().should('be.visible').type(userData.year);
+        });
     }
 }
 

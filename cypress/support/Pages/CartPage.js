@@ -9,30 +9,42 @@ class CartPage{
     }
 
     name(){
-        return cy.get('#name');
+        cy.get('#orderModal').should('be.visible');
+        return cy.get('#name').should('be.visible');
     }
 
     country(){
-        return cy.get("#country");
+        cy.get('#orderModal').should('be.visible');
+        return cy.get("#country").should('be.visible');
     }
 
     city(){
-        return cy.get('#city');
+        cy.get('#orderModal').should('be.visible');
+
+        return cy.get('#city').should('be.visible');
     }
 
     card(){
-        return cy.get('#card');
+        cy.get('#orderModal').should('be.visible');
+
+        return cy.get('#card').should('be.visible');
     }
 
     monthCard(){
-        return cy.get('#month');
+        cy.get('#orderModal').should('be.visible');
+
+        return cy.get('#month').should('be.visible');
     }
 
     yearCard(){
-        return cy.get('#year');
+        cy.get('#orderModal').should('be.visible');
+
+        return cy.get('#year').should('be.visible');
     }
 
     purchaseButton(){
+        cy.get('#orderModal').should('be.visible');
+
         return cy.get('#orderModal > div > div > div.modal-footer > button.btn.btn-primary')
         .should('be.visible');
     }
@@ -46,11 +58,11 @@ class CartPage{
     }
 
     placeOrderDisplayed(){
-        return this.placeOrderButton().should('be.visible');
+        return this.placeOrderButton().should('exist').and('be.visible');
     }
 
     placeOrderButtonClick(){
-        return this.placeOrderButton().should('be.visible').click();
+        return this.placeOrderDisplayed().click();
     }
     
     deleteProduct(){

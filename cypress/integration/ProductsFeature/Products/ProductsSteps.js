@@ -14,7 +14,6 @@ When('I add to cart 1 product of each category', () => {
 When('i delete 1 product from the cart', () => {
   HomePage.clickOnCart();
   CartPage.deleteProduct();
-  cy.wait(500);
 })
 
 When('i proceed with the purchase', () => {
@@ -22,19 +21,8 @@ When('i proceed with the purchase', () => {
 })
 
 When('i fill my personal information', () => {
-  let userData;
-  cy.fixture('DataUser').then((data) => {
-    userData = data;
-    GeneralMethods.fillInformation(
-      userData.name,
-      userData.country,
-      userData.city,
-      userData.card,
-      userData.month,
-      userData.year
-    );
-    CartPage.clickPurchaseButton();
-  });
+  GeneralMethods.fillInformation();
+  CartPage.clickPurchaseButton();
 })
 
 Then('i should see a confirmation message', () => {
